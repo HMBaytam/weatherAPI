@@ -1,0 +1,129 @@
+{
+  "cityId": "43.262,-79.888",
+  "country": "Canada",
+  "state": "ON",
+  "city": "Hamilton",
+  "description": "Similar temperatures continuing with a chance of rain Sunday.",
+  "weatherDetails": [
+    {
+      "date": "2026-02-25",
+      "maxTemp": 33.5,
+      "minTemp": 23.4,
+      "tempNow": 29.6,
+      "condition": "Snow, Rain, Partially cloudy",
+      "description": "Partly cloudy throughout the day with rain or snow."
+    },
+    {
+      "date": "2026-02-26",
+      "maxTemp": 26.5,
+      "minTemp": 17,
+      "tempNow": 22.1,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-02-27",
+      "maxTemp": 41.1,
+      "minTemp": 23.1,
+      "tempNow": 32.5,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-02-28",
+      "maxTemp": 39.8,
+      "minTemp": 24.7,
+      "tempNow": 34.5,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-03-01",
+      "maxTemp": 23.8,
+      "minTemp": 14.6,
+      "tempNow": 19,
+      "condition": "Snow, Partially cloudy",
+      "description": "Partly cloudy throughout the day with a chance of snow."
+    },
+    {
+      "date": "2026-03-02",
+      "maxTemp": 21.1,
+      "minTemp": 11.7,
+      "tempNow": 16.2,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-03-03",
+      "maxTemp": 30.5,
+      "minTemp": 15,
+      "tempNow": 23.3,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-03-04",
+      "maxTemp": 34.4,
+      "minTemp": 24.5,
+      "tempNow": 28.7,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-03-05",
+      "maxTemp": 49.9,
+      "minTemp": 26.7,
+      "tempNow": 35.9,
+      "condition": "Overcast",
+      "description": "Cloudy skies throughout the day."
+    },
+    {
+      "date": "2026-03-06",
+      "maxTemp": 49.5,
+      "minTemp": 34.1,
+      "tempNow": 39.8,
+      "condition": "Overcast",
+      "description": "Cloudy skies throughout the day."
+    },
+    {
+      "date": "2026-03-07",
+      "maxTemp": 65.4,
+      "minTemp": 32.8,
+      "tempNow": 47.4,
+      "condition": "Overcast",
+      "description": "Cloudy skies throughout the day."
+    },
+    {
+      "date": "2026-03-08",
+      "maxTemp": 60.5,
+      "minTemp": 35.5,
+      "tempNow": 50.2,
+      "condition": "Snow, Rain, Overcast",
+      "description": "Cloudy skies throughout the day with a chance of rain or snow."
+    },
+    {
+      "date": "2026-03-09",
+      "maxTemp": 38.4,
+      "minTemp": 31.5,
+      "tempNow": 35,
+      "condition": "Snow, Rain, Partially cloudy",
+      "description": "Partly cloudy throughout the day with a chance of rain or snow."
+    },
+    {
+      "date": "2026-03-10",
+      "maxTemp": 54.2,
+      "minTemp": 32.8,
+      "tempNow": 44.2,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    },
+    {
+      "date": "2026-03-11",
+      "maxTemp": 45,
+      "minTemp": 32.3,
+      "tempNow": 37.1,
+      "condition": "Partially cloudy",
+      "description": "Partly cloudy throughout the day."
+    }
+  ]
+}
