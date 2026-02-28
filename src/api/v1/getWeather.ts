@@ -6,7 +6,7 @@ const router = Router();
 let weatherData: BaseWeatherData;
 
 
-// TODO: Add a way to check what unit the user wants with the default being Farenheit and add that to the url in utils/funcs.ts
+// TODO: Add validation for unitGroup values (enum of 'us', 'metric', 'uk')
 router.get('/weather', async (req: Request, res: Response) => {
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
