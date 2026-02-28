@@ -14,7 +14,12 @@ router.get('/weather', async (req: Request, res: Response) => {
     const startDate: string | undefined = req.query.startDate as string || undefined;
     const endDate: string | undefined = req.query.endDate as string || undefined;
 
-
+    if (!city || !country) {
+        res.status(400).json(
+            { error: 'City and country parameters are required'}
+        );
+        return;
+    }
     let allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
 
 
