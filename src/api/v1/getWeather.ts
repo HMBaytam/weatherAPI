@@ -11,8 +11,7 @@ router.get('/weather', async (req: Request, res: Response) => {
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
 
-    var allData: any = await baseWeatherFetch(city, country);
-    var tempData: Array<any> = allData['days'];
+    var allData: JSON = await baseWeatherFetch(city, country);
 
 
     weatherData = cleanWeatherData(allData);

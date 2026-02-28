@@ -18,7 +18,7 @@ export function baseWeatherFetch(city: string, country: string): Promise<JSON> {
 
 // TODO: Add a way to convert full country name into country code
 
-export function cleanWeatherData(data: any): any {
+export function cleanWeatherData(data: any): BaseWeatherData {
     let responseData: BaseWeatherData;
     let dailyBreakdown: Array<any> = data['days'];
 
