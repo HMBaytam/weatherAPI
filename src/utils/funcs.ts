@@ -34,16 +34,16 @@ export function baseWeatherFetch(city: string, country: string, unitGroup: strin
 
 export function cleanWeatherData(data: any): BaseWeatherData {
     let responseData: BaseWeatherData;
-    let dailyBreakdown: Array<any> = data['days'];
+    let dailyBreakdown: Array<any> = [];
 
-    for (let i=0; i<data.length; i++) {
+    for (let i=0; i<data['days'].length; i++) {
         dailyBreakdown.push({
-            date: data[i]['datetime'],
-            maxTemp: data[i]['tempmax'],
-            minTemp: data[i]['tempmin'],
-            tempNow: data[i]['temp'],
-            condition: data[i]['conditions'],
-            description: data[i]['description']
+            date: data['days'][i]['datetime'],
+            maxTemp: data['days'][i]['tempmax'],
+            minTemp: data['days'][i]['tempmin'],
+            tempNow: data['days'][i]['temp'],
+            condition: data['days'][i]['conditions'],
+            description: data['days'][i]['description']
         })
     }
     responseData = {
