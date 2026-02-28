@@ -9,7 +9,6 @@ const API_KEY = process.env.WEATHER_API_KEY as string;
 // TODO: Refactor this function to be more modular and reusable for other routes (e.g. get forecast for 1 day, get forecast for date range, etc.)
 // TODO: Validation for city and country parameters (e.g. check if they are valid strings, check if they are not empty, etc.)
 // TODO: Add a way to convert full country name into country code (e.g. United States -> US, Canada -> CA, etc.)
-// TODO: Add validation for unitGroup values (enum of 'us', 'metric', 'uk')
 // TODO: Add error handling for fetch request (e.g. check if response is ok, check if data is in the correct format, etc.)
 export function baseWeatherFetch(city: string, country: string, unitGroup: string, startDate?: string, endDate?: string): Promise<JSON> {
 
