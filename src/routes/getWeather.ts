@@ -8,7 +8,6 @@ const date7DaysFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOStr
 let weatherData: BaseWeatherData;
 
 
-// TODO: Add validation for unitGroup values (enum of 'us', 'metric', 'uk')
 router.get('/weather', async (req: Request, res: Response) => {
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
