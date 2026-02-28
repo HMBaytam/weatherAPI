@@ -3,12 +3,10 @@ import { BaseWeatherData } from '../modules/weather';
 import { baseWeatherFetch, cleanWeatherData } from '../utils/funcs';
 
 const router = Router();
-const today = new Date().toISOString().split('T')[0];
-const date7DaysFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-let weatherData: BaseWeatherData;
 
 
 router.get('/weather', async (req: Request, res: Response) => {
+    let weatherData: BaseWeatherData;
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
     const unitGroup: string = req.query.unitGroup as string || 'us';
