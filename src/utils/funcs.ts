@@ -15,7 +15,7 @@ export function baseWeatherFetch(city: string, country: string, unitGroup: strin
 
     console.log(`Getting weather data for ${city}, ${country}...`);
 
-    var weatherDataUrl: string =  `${BASE_URL}/${city}%2C${country}`;
+    let weatherDataUrl: string =  `${BASE_URL}/${city}%2C${country}`;
     if (startDate) {
         weatherDataUrl += `/${startDate}`;
     }
