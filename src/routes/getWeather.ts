@@ -7,7 +7,6 @@ const router = Router();
 
 
 router.get('/weather', async (req: Request, res: Response) => {
-    let weatherData: BaseWeatherData;
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
     const unitGroup: UnitGroup = Object.values(UnitGroup).includes(req.query.unitGroup as UnitGroup) ? req.query.unitGroup as UnitGroup : UnitGroup.US;
@@ -20,10 +19,9 @@ router.get('/weather', async (req: Request, res: Response) => {
         );
         return;
     }
-    let allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
+    const allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
 
-
-    weatherData = cleanWeatherData(allData);
+    const weatherData: BaseWeatherData = cleanWeatherData(allData);
 
     res.json(weatherData);
 })
