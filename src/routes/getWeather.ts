@@ -14,7 +14,7 @@ router.get('/weather', async (req: Request, res: Response) => {
     const endDate: string | undefined = req.query.endDate as string || undefined;
 
 
-    var allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
+    let allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
 
 
     weatherData = cleanWeatherData(allData);

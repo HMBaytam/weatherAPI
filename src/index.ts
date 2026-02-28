@@ -12,7 +12,7 @@ app.use('/api/v1', Routes)
 
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('Hello, Tyepscript Express!');
+    res.send('Hello, Typescript Express!');
 });
 
 app.listen(PORT, () => {
