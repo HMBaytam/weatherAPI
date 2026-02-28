@@ -5,11 +5,12 @@ dotenv.config();
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
 const API_KEY = process.env.WEATHER_API_KEY as string;
 
-export function baseWeatherFetch(city: string, country: string): Promise<JSON> {
+export function baseWeatherFetch(city: string, country: string, unitGroup: string): Promise<JSON> {
 
     console.log(`Getting weather data for ${city}, ${country}...`);
 
-    var weatherDataUrl: string =  `${BASE_URL}/${city}%2C${country}?key=${API_KEY}`;
+    var weatherDataUrl: string =  `${BASE_URL}/${city}%2C${country}?key=${API_KEY}&unitGroup=${unitGroup}`;
+    
     return fetch(weatherDataUrl, {method: 'GET', redirect: 'follow'})
   .then(response => response.json())
   .catch(error => console.log('error', error));

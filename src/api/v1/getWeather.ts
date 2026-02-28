@@ -10,8 +10,9 @@ let weatherData: BaseWeatherData;
 router.get('/weather', async (req: Request, res: Response) => {
     const city: string = req.query.city as string;
     const country: string = req.query.country as string;
+    const unitGroup: string = req.query.unitGroup as string || 'us';
 
-    var allData: JSON = await baseWeatherFetch(city, country);
+    var allData: JSON = await baseWeatherFetch(city, country, unitGroup);
 
 
     weatherData = cleanWeatherData(allData);
