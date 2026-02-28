@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { BaseWeatherData } from '../../modules/weather';
-import { baseWeatherFetch, cleanWeatherData } from '../../utils/funcs';
+import { BaseWeatherData } from '../modules/weather';
+import { baseWeatherFetch, cleanWeatherData } from '../utils/funcs';
 
 const router = Router();
 let weatherData: BaseWeatherData;
