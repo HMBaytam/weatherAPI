@@ -33,27 +33,22 @@ export function baseWeatherFetch(city: string, country: string, unitGroup: strin
 // TODO: Add a way to convert full country name into country code
 
 export function cleanWeatherData(data: any): BaseWeatherData {
-    let responseData: BaseWeatherData;
-    let dailyBreakdown: Array<any> = [];
+    const dailyBreakdown = data['days'].map((day: any) => {
+        return {
+            date: day['datetime'],
+            maxTemp: day['tempmax'],
+            minTemp: day['tempmin'],
+            avgTemp: day['temp'],
+            description: day['description']
+    }})
 
-    for (let i=0; i<data['days'].length; i++) {
-        dailyBreakdown.push({
-            date: data['days'][i]['datetime'],
-            maxTemp: data['days'][i]['tempmax'],
-            minTemp: data['days'][i]['tempmin'],
-            tempNow: data['days'][i]['temp'],
-            condition: data['days'][i]['conditions'],
-            description: data['days'][i]['description']
-        })
-    }
-    responseData = {
+    const responseData: BaseWeatherData = {
         cityId: `${data['latitude']},${data['longitude']}`,
         country: data['resolvedAddress'].split(',')[2].trim(),
         state: data['resolvedAddress'].split(',')[1].trim(),
         city: data['resolvedAddress'].split(',')[0].trim(),
         description: data['description'],
         weatherDetails: dailyBreakdown
-        
     }
 
   return responseData;
