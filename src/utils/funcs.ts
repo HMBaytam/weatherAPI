@@ -4,7 +4,10 @@ import { ApiDailyBreakdown } from '../modules/apiDailyBreakdown';
 import { FullApiResponse } from '../modules/fullApiResponse';
 import { DailyBreakdown } from '../modules/dailyBreakdown';
 import { UnitGroup } from '../modules/unitGroup';
+
 dotenv.config();
+if (!process.env.WEATHER_API_KEY) throw new Error('WEATHER_API_KEY is not defined in environment variables');
+
 
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
 const API_KEY = process.env.WEATHER_API_KEY as string;
@@ -12,7 +15,7 @@ const API_KEY = process.env.WEATHER_API_KEY as string;
 
 // TODO: Add a way to convert full country name into country code (e.g. United States -> US, Canada -> CA, etc.)
 export async function baseWeatherFetch(city: string, country: string, unitGroup: UnitGroup, startDate?: string, endDate?: string): Promise<FullApiResponse> {
-    if (!API_KEY) throw new Error('API key is not set in environment variables');
+
 
     let weatherDataUrl: string = `${BASE_URL}/${city}%2C${country}`;
     if (startDate) {
