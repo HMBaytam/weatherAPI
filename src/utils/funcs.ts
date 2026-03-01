@@ -46,12 +46,12 @@ export function cleanWeatherData(data: FullApiResponse): BaseWeatherData {
             description: day.description,
         };
     });
-
+    const [city, state, country] = data.resolvedAddress.split(',').map(part => part.trim());
     const responseData: BaseWeatherData = {
         cityId: `${data.latitude},${data.longitude}`,
-        country: data.resolvedAddress.split(',')[2].trim(),
-        state: data.resolvedAddress.split(',')[1].trim(),
-        city: data.resolvedAddress.split(',')[0].trim(),
+        country: country,
+        state: state,
+        city: city,
         description: data.description,
         weatherDetails: dailyBreakdown
     }
