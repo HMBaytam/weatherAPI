@@ -9,7 +9,7 @@ export interface ApiCurrentConditions {
      precipprob: number,
      snow: number,
      snowdepth: number,
-     preciptype: Array<string>,
+     preciptype: Array<string> | null,
      windgust: number,
      windspeed: number,
      winddir: number,
