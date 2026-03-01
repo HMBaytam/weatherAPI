@@ -19,11 +19,16 @@ router.get('/weather', async (req: Request, res: Response) => {
         );
         return;
     }
-    const allData: JSON = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
-
-    const weatherData: BaseWeatherData = cleanWeatherData(allData);
-
-    res.json(weatherData);
+    try {
+        const allData = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
+        const weatherData: BaseWeatherData = cleanWeatherData(allData);
+        res.json(weatherData);
+    } 
+    catch (error) {
+        res.status(500).json(
+            { error: 'failed to fetch weather data'}
+        )
+    }
 })
 
 

@@ -10,7 +10,7 @@ const API_KEY = process.env.WEATHER_API_KEY as string;
 // TODO: Validation for city and country parameters (e.g. check if they are valid strings, check if they are not empty, etc.)
 // TODO: Add a way to convert full country name into country code (e.g. United States -> US, Canada -> CA, etc.)
 // TODO: Add error handling for fetch request (e.g. check if response is ok, check if data is in the correct format, etc.)
-export function baseWeatherFetch(city: string, country: string, unitGroup: string, startDate?: string, endDate?: string): Promise<JSON> {
+export async function baseWeatherFetch(city: string, country: string, unitGroup: string, startDate?: string, endDate?: string): Promise<JSON> {
 
     console.log(`Getting weather data for ${city}, ${country}...`);
 
@@ -23,9 +23,11 @@ export function baseWeatherFetch(city: string, country: string, unitGroup: strin
 
     }
     weatherDataUrl += `?unitGroup=${unitGroup}&key=${API_KEY}&contentType=json`;  
-    return fetch(weatherDataUrl, {method: 'GET', redirect: 'follow'})
-  .then(response => response.json())
-  .catch(error => console.log('error', error));
+    const response = await fetch(weatherDataUrl, {method: 'GET', redirect: 'follow'})
+    if (response.status >= 400) {
+        throw new Error(`Failed to fetch weather data: ${response.statusText}`);
+    }
+    return response.json();
 
 }
 
