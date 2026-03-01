@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { BaseWeatherData } from '../modules/weather';
+import { FullApiResponse } from '../modules/fullApiResponse';
 import { UnitGroup } from '../modules/unitGroup';
 import { baseWeatherFetch, cleanWeatherData } from '../utils/funcs';
 
@@ -20,7 +21,7 @@ router.get('/weather', async (req: Request, res: Response) => {
         return;
     }
     try {
-        const allData = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
+        const allData : FullApiResponse = await baseWeatherFetch(city, country, unitGroup, startDate, endDate);
         const weatherData: BaseWeatherData = cleanWeatherData(allData);
         res.json(weatherData);
     } 
